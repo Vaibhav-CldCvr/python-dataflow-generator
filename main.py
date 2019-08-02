@@ -72,6 +72,7 @@ def run():
             gcp_project_id, gsc_temp_location, df_type, df_runner, read_gsc_location, bq_dataset, bq_table)
 
         if set_config(config):
+            pass
             # copy and setup folder structure.
 
 
