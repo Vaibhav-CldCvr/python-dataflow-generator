@@ -21,6 +21,15 @@ def generate_dataflow_configuration(*args):
     return config
 
 
+def set_config(cfg):
+    try:
+        with open('/Users/cloudcover-vaibhav/python-dataflow-generator/app_code/config/mapping.json', 'w') as p:
+            json.dump(cfg, p)
+            return True
+    except EnvironmentError:
+        logging.error('Error occured while writing to json file.')
+
+
 def run():
     flag = False
     directory_path_for_setup = input(
@@ -62,8 +71,8 @@ def run():
         config = generate_dataflow_configuration(
             gcp_project_id, gsc_temp_location, df_type, df_runner, read_gsc_location, bq_dataset, bq_table)
 
-        with open('/Users/cloudcover-vaibhav/python-dataflow-generator/app_code/config/mapping.json', 'w') as p:
-            json.dump(config, p)
+        if set_config(config):
+            # copy and setup folder structure.
 
 
 if __name__ == "__main__":
