@@ -31,11 +31,7 @@ def run():
             df_type = input(
                 "Choose dataflow job type - batch/stream (default's to batch) : ")
 
-            if df_type == 'stream':
-                # set df streaming parameter
-                pass
             df_type = 'batch'
-
             gcp_project_id = input('Enter your gcp project id : ')
             if gcp_project_id:
                 gsc_temp_location = input('Enter gcs temp path location : ')
