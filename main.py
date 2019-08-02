@@ -1,8 +1,8 @@
 
 
 def run():
-    project_folder_ name = input('Enter your project folder name: ')
-    if project_folder_:
+    project_folder_name = input('Enter your project folder name: ')
+    if project_folder_name:
         df_type = input(
             "Choose dataflow job type : batch/stream (default's to batch)")
 
@@ -15,16 +15,16 @@ def run():
             gsc_temp_location = input('Enter gcs temp path location: ')
             if gsc_temp_location:
                 df_runner = input(
-                    'Enter dataflow runner type: DataflowRunner/DirectRunner')
-                if df_runner:
-                    type_of_df = input("Default to 1. GCS to BiqQuery")
-                    if type_of_df == '1':
-                        read_gsc_location = input(
-                            'Enter gcs location path: ')
-                        bq_dataset = input(
-                            'Enter big query dataset name: ')
-                        bq_table = input(
-                            'Enter big query table name: ')
+                    'Enter dataflow runner type: DataflowRunner/DirectRunner: ')
+                type_of_df = input("Default to 1. GCS to BiqQuery: ")
+                type_of_df = '1'
+                if type_of_df == '1':
+                    read_gsc_location = input(
+                        'Enter gcs location path: ')
+                    bq_dataset = input(
+                        'Enter big query dataset name: ')
+                    bq_table = input(
+                        'Enter big query table name: ')
 
 
 if __name__ == "__main__":
